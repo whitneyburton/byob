@@ -4,7 +4,10 @@ module.exports = {
     connection: 'postgres://localhost/bouldering_areas',
     useNullAsDefault: true,
     migrations: {
-      directory: './migrations'
+      directory: './db/migrations'
     },
+    seeds: {
+      directory: './db/seeds/dev'
+    }
   }
 };
