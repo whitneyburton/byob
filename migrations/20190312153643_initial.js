@@ -10,8 +10,8 @@ exports.up = (knex, Promise) => {
     
     knex.schema.createTable('areas', (table) => {
       table.increments('id').primary();
-      table.integer('area_id').unsigned();
-      table.foreign('area_id').references('states.id');
+      table.integer('state_id').unsigned();
+      table.foreign('state_id').references('states.id');
       table.string('area');
       table.string('state');
       table.string('best_season');
