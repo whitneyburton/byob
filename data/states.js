@@ -55,3 +55,5 @@ const states = [
     statePercentage: 14.7
   }
 ];
+
+module.exports = states;

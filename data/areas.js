@@ -240,3 +240,5 @@ const areas = [
     nearestCity: 'Albuquerque'
   }
 ];
+
+module.exports = areas;
