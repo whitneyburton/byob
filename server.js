@@ -73,7 +73,7 @@ app.post('/api/v1/states', (req, res) => {
 
 app.post('/api/v1/areas', (req, res) => {
   const area = req.body;
-  
+
   for (let requiredParameter of ['area', 'state', 'best_season', 'total_boulders', 'area_percentage', 'nearest_city']) {
     if (!area[requiredParameter]) {
       return res.status(422).send({
@@ -85,7 +85,14 @@ app.post('/api/v1/areas', (req, res) => {
       });
     }
   }
-  
+
+  // database('states').select('state').where('state', area.state)
+  //   .then(states => {
+  //     if (!states.includes(area.state)) {
+  //       return res.status(404).json(`The state ${area.state} does not exist. Try again.`)
+  //     }
+  //   })
+
   database('areas').insert(area, 'id')
     .then(area => {
       res.status(201).json({ id: area[0] })
